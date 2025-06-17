@@ -1,170 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <title>Ferrari 458 Market Tracker</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap" rel="stylesheet" />
     <style>
-      body {
-        margin: 0;
-        font-family: "Roboto", sans-serif;
-        background-color: #f8f9fa;
-        color: #212529;
-      }
-      header {
-        background-color: #cc0000;
-        color: #fff;
-        text-align: center;
-        font-size: 2rem;
-        font-weight: 700;
-        height: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      nav {
-        background-color: #212529;
-        padding: 1rem;
-        display: flex;
-        justify-content: center;
-      }
-      nav a {
-        color: #ffd700;
-        margin: 0 1.5rem;
-        text-decoration: none;
-        font-weight: 500;
-        font-size: 1.1rem;
-      }
-      .container {
-        max-width: 1000px;
-        margin: auto;
-        padding: 2rem;
-      }
-      h2,
-      h3 {
-        font-weight: 500;
-        margin-top: 2rem;
-        color: #cc0000;
-      }
-      p,
-      li {
-        font-size: 1.1rem;
-        line-height: 1.6;
-      }
-      ol {
-        padding-left: 1.2rem;
-      }
-      ul {
-        padding-left: 1.2rem;
-        list-style-type: disc;
-      }
-      .img-section img {
-        width: 100%;
-        border-radius: 6px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        margin: 1rem 0;
-      }
-      iframe {
-        border-radius: 6px;
-        margin-top: 1rem;
-        width: 100%;
-        max-width: 100%;
-      }
-      .highlight-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 1rem;
-        margin-top: 2rem;
-      }
-      .highlight-box {
-        background: #fff;
-        border: 1px solid #dee2e6;
-        padding: 1.5rem;
-        border-radius: 6px;
-        text-align: center;
-        font-weight: 500;
-      }
-      footer {
-        text-align: center;
-        padding: 2rem;
-        font-size: 0.9rem;
-        color: #6c757d;
-      }
+        body {
+            margin: 0;
+            font-family: "Roboto", sans-serif;
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+        
+        header {
+            background-color: #cc0000;
+            color: #fff;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        nav {
+            background-color: #212529;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+        }
+        
+        nav a {
+            color: #ffd700;
+            margin: 0 1.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 2rem;
+        }
+        
+        h2,
+        h3 {
+            font-weight: 500;
+            margin-top: 2rem;
+            color: #cc0000;
+        }
+        
+        p,
+        li {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        ol {
+            padding-left: 1.2rem;
+        }
+        
+        ul {
+            padding-left: 1.2rem;
+            list-style-type: disc;
+        }
+        
+        .img-section img {
+            width: 100%;
+            border-radius: 6px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            margin: 1rem 0;
+        }
+        
+        iframe {
+            border-radius: 6px;
+            margin-top: 1rem;
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .highlight-box {
+            background: #fff;
+            border: 1px solid #dee2e6;
+            padding: 1.5rem;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
     </style>
-  </head>
-  <body>
+</head>
+
+<body>
     <header>Ferrari 458 Market Tracker</header>
     <nav>
-      <a href="resume.html">Resume</a>
-      <a href="#graph">Graph</a>
-      <a href="pong.html">Pong</a>
+        <a href="bootstramp/index.html">Resume</a>
+        <a href="#graph">Graph</a>
+        <a href="pong.html">Pong</a>
     </nav>
     <div class="container">
-      <h2>About the Ferrari 458</h2>
-      <p>
-        The Ferrari 458 is an icon of Italian engineering. With a mid-mounted
-        4.5L V8 and timeless Pininfarina design, the 458 remains a dream car for
-        many enthusiasts. This page tracks its resale values using real market
-        data from Cars & Bids.
-      </p>
-
-      <h3>Performance & Market Data</h3>
-      <ol>
-        <li>
-          Specs
-          <ul>
-            <li>4.5L V8, naturally aspirated</li>
-            <li>0–60 mph in 3.0 seconds</li>
-            <li>Top Speed: 210 mph</li>
-          </ul>
-        </li>
-        <li>
-          Market Trends
-          <ul>
-            <li>Values fluctuate with mileage, rarity, and model year</li>
-            <li>458 Speciale models command premium prices</li>
-          </ul>
-        </li>
-      </ol>
-
-      <div class="img-section">
-        <img src="/ferrari.jpeg" alt="Ferrari 475" />
-      </div>
-
-      <div>
-        <h3>Watch in Action</h3>
-        <iframe
-          height="450"
-          src="https://youtube.com/embed/ujl0NYeDJoI?si=dv2FvNHZ9f8YwqSd"
-          allowfullscreen
-        ></iframe>
-      </div>
-
-      <div id="graph">
-        <h3>Ferrari 458 Value Over Time</h3>
+        <h2>About the Ferrari 458</h2>
         <p>
-          The interactive Tableau chart below visualizes Ferrari 458 resale
-          values over the past several years.
+            The Ferrari 458 is an icon of Italian engineering. With a mid-mounted 4.5L V8 and timeless Pininfarina design, the 458 remains a dream car for many enthusiasts. This page tracks its resale values using real market data from Cars & Bids.
         </p>
-        <!-- <iframe height="600" src="https://public.tableau.com/views/Ferrari458PricesOverTime/Dashboard1"></iframe> -->
-        <iframe
-          src="https://public.tableau.com/views/YourVizName/DashboardName?:embed=y&:display_count=yes&:origin=viz_share_link"
-          width="100%"
-          height="600"
-        ></iframe>
-      </div>
 
-      <div class="highlight-grid">
-        <div class="highlight-box">Engine: 4.5L V8</div>
-        <div class="highlight-box">Top Speed: 210 mph</div>
-        <div class="highlight-box">Design: Pininfarina Legacy</div>
-      </div>
+        <h3>Performance & Market Data</h3>
+        <ol>
+            <li>
+                Specs
+                <ul>
+                    <li>4.5L V8, naturally aspirated</li>
+                    <li>0–60 mph in 3.0 seconds</li>
+                    <li>Top Speed: 210 mph</li>
+                </ul>
+            </li>
+            <li>
+                Market Trends
+                <ul>
+                    <li>Values fluctuate with mileage, rarity, and model year</li>
+                    <li>458 Speciale models command premium prices</li>
+                </ul>
+            </li>
+        </ol>
+
+        <div class="img-section">
+            <img src="/ferrari.jpeg" alt="Ferrari 475" />
+        </div>
+
+        <div>
+            <h3>Watch in Action</h3>
+            <iframe height="450" src="https://youtube.com/embed/ujl0NYeDJoI?si=dv2FvNHZ9f8YwqSd" allowfullscreen></iframe>
+        </div>
+
+        <div id="graph">
+            <h3>Ferrari 458 Value Over Time</h3>
+            <p>
+                The interactive Tableau chart below visualizes Ferrari 458 resale values over the past several years.
+            </p>
+            <!-- <iframe height="600" src="https://public.tableau.com/views/Ferrari458PricesOverTime/Dashboard1"></iframe> -->
+            <iframe src="https://public.tableau.com/views/YourVizName/DashboardName?:embed=y&:display_count=yes&:origin=viz_share_link" width="100%" height="600"></iframe>
+        </div>
+
+        <div class="highlight-grid">
+            <div class="highlight-box">Engine: 4.5L V8</div>
+            <div class="highlight-box">Top Speed: 210 mph</div>
+            <div class="highlight-box">Design: Pininfarina Legacy</div>
+        </div>
     </div>
     <footer>
-      &copy; 2025 Ferrari 458 Tracker. Data sourced from Cars & Bids.
+        &copy; 2025 Ferrari 458 Tracker. Data sourced from Cars & Bids.
     </footer>
-  </body>
+</body>
+
 </html>

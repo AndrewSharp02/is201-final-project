@@ -1,169 +1,182 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <title>Pong Game</title>
-  <style>
-    body {
-      margin: 0;
-      background: #000;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      font-family: sans-serif;
-      color: #fff;
-    }
-    h1 {
-      margin: 1rem;
-      color: #cc0000;
-    }
-    canvas {
-      background: #111;
-      border: 4px solid #cc0000;
-      margin-top: 1rem;
-    }
-    #startButton {
-      margin-top: 1rem;
-      padding: 0.5rem 1.5rem;
-      font-size: 1.1rem;
-      background-color: #cc0000;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    #startButton:hover {
-      background-color: #a30000;
-    }
-    #gameOverMsg {
-      margin-top: 1rem;
-      font-size: 1.5rem;
-      color: #ff4444;
-      display: none;
-    }
-    header {
-      background-color: #cc0000;
-        color: #fff;
-        text-align: center;
-        font-size: 2rem;
-        font-weight: 700;
-        width: 100%;
-        height: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    nav {
-      background-color: #212529;
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
-      width: 100%;
-    }
-    nav a {
-      color: #ffd700;
-      margin: 0 1.5rem;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 1.1rem;
-    }    
-  </style>
+    <meta charset="UTF-8" />
+    <title>Pong Game</title>
+    <style>
+        body {
+            margin: 0;
+            background: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: sans-serif;
+            color: #fff;
+        }
+        
+        h1 {
+            margin: 1rem;
+            color: #cc0000;
+        }
+        
+        canvas {
+            background: #111;
+            border: 4px solid #cc0000;
+            margin-top: 1rem;
+        }
+        
+        #startButton {
+            margin-top: 1rem;
+            padding: 0.5rem 1.5rem;
+            font-size: 1.1rem;
+            background-color: #cc0000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        #startButton:hover {
+            background-color: #a30000;
+        }
+        
+        #gameOverMsg {
+            margin-top: 1rem;
+            font-size: 1.5rem;
+            color: #ff4444;
+            display: none;
+        }
+        
+        header {
+            background-color: #cc0000;
+            color: #fff;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        nav {
+            background-color: #212529;
+            padding: 1rem;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        
+        nav a {
+            color: #ffd700;
+            margin: 0 1.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+        }
+    </style>
 </head>
+
 <body>
-  <header>
-    Pong Game
-  </header>
-  <nav>
-    <a href="resume.html">Resume</a>
-    <a href="index.html">Ferrari 458</a>
-    <a href="pong.html">Pong</a>
-  </nav>
+    <header>
+        Pong Game
+    </header>
+    <nav>
+        <a href="bootstramp/index.html">Resume</a>
+        <a href="ferrari.html">Ferrari 458</a>
+        <a href="pong.html">Pong</a>
+    </nav>
 
-  <button id="startButton">Start Game</button>
-  <div id="gameOverMsg">Game Over</div>
-  <canvas id="game" width="600" height="400"></canvas>
-  <script>
-    const canvas = document.getElementById('game');
-    const ctx = canvas.getContext('2d');
-    const startButton = document.getElementById('startButton');
-    const gameOverMsg = document.getElementById('gameOverMsg');
+    <button id="startButton">Start Game</button>
+    <div id="gameOverMsg">Game Over</div>
+    <canvas id="game" width="600" height="400"></canvas>
+    <script>
+        const canvas = document.getElementById('game');
+        const ctx = canvas.getContext('2d');
+        const startButton = document.getElementById('startButton');
+        const gameOverMsg = document.getElementById('gameOverMsg');
 
-    let paddleHeight = 80, paddleWidth = 10;
-    let leftY = rightY = canvas.height / 2 - paddleHeight / 2;
-    let ballX = canvas.width / 2, ballY = canvas.height / 2;
-    let ballDX = 4, ballDY = 2;
-    let gameInterval;
+        let paddleHeight = 80,
+            paddleWidth = 10;
+        let leftY = rightY = canvas.height / 2 - paddleHeight / 2;
+        let ballX = canvas.width / 2,
+            ballY = canvas.height / 2;
+        let ballDX = 4,
+            ballDY = 2;
+        let gameInterval;
 
-    function drawRect(x, y, w, h, color) {
-      ctx.fillStyle = color;
-      ctx.fillRect(x, y, w, h);
-    }
+        function drawRect(x, y, w, h, color) {
+            ctx.fillStyle = color;
+            ctx.fillRect(x, y, w, h);
+        }
 
-    function drawBall() {
-      ctx.beginPath();
-      ctx.arc(ballX, ballY, 8, 0, Math.PI * 2);
-      ctx.fillStyle = "#fff";
-      ctx.fill();
-      ctx.closePath();
-    }
+        function drawBall() {
+            ctx.beginPath();
+            ctx.arc(ballX, ballY, 8, 0, Math.PI * 2);
+            ctx.fillStyle = "#fff";
+            ctx.fill();
+            ctx.closePath();
+        }
 
-    function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Draw paddles
-      drawRect(10, leftY, paddleWidth, paddleHeight, "#0f0");
-      drawRect(canvas.width - 20, rightY, paddleWidth, paddleHeight, "#f00");
+            // Draw paddles
+            drawRect(10, leftY, paddleWidth, paddleHeight, "#0f0");
+            drawRect(canvas.width - 20, rightY, paddleWidth, paddleHeight, "#f00");
 
-      // Draw ball
-      drawBall();
+            // Draw ball
+            drawBall();
 
-      // Move ball
-      ballX += ballDX;
-      ballY += ballDY;
+            // Move ball
+            ballX += ballDX;
+            ballY += ballDY;
 
-      // Bounce top/bottom
-      if (ballY < 0 || ballY > canvas.height) ballDY *= -1;
+            // Bounce top/bottom
+            if (ballY < 0 || ballY > canvas.height) ballDY *= -1;
 
-      // Bounce paddles
-      if (ballX < 20 && ballY > leftY && ballY < leftY + paddleHeight) ballDX *= -1;
-      if (ballX > canvas.width - 20 && ballY > rightY && ballY < rightY + paddleHeight) ballDX *= -1;
+            // Bounce paddles
+            if (ballX < 20 && ballY > leftY && ballY < leftY + paddleHeight) ballDX *= -1;
+            if (ballX > canvas.width - 20 && ballY > rightY && ballY < rightY + paddleHeight) ballDX *= -1;
 
-      // Game over if player misses
-      if (ballX < 0) {
-        gameOver();
-      }
+            // Game over if player misses
+            if (ballX < 0) {
+                gameOver();
+            }
 
-      // Reset ball if CPU misses (optional: you could count CPU score here)
-      if (ballX > canvas.width) {
-        ballX = canvas.width / 2;
-        ballY = canvas.height / 2;
-        ballDX = -ballDX;
-      }
+            // Reset ball if CPU misses (optional: you could count CPU score here)
+            if (ballX > canvas.width) {
+                ballX = canvas.width / 2;
+                ballY = canvas.height / 2;
+                ballDX = -ballDX;
+            }
 
-      // Move right paddle (simple AI)
-      if (rightY + paddleHeight / 2 < ballY) rightY += 3;
-      else rightY -= 3;
-    }
+            // Move right paddle (simple AI)
+            if (rightY + paddleHeight / 2 < ballY) rightY += 3;
+            else rightY -= 3;
+        }
 
-    function gameOver() {
-      clearInterval(gameInterval);
-      gameOverMsg.style.display = "block";
-    }
+        function gameOver() {
+            clearInterval(gameInterval);
+            gameOverMsg.style.display = "block";
+        }
 
-    document.addEventListener("keydown", e => {
-      if (e.key === "ArrowUp") leftY -= 20;
-      else if (e.key === "ArrowDown") leftY += 20;
-    });
+        document.addEventListener("keydown", e => {
+            if (e.key === "ArrowUp") leftY -= 20;
+            else if (e.key === "ArrowDown") leftY += 20;
+        });
 
-    startButton.addEventListener("click", () => {
-      ballX = canvas.width / 2;
-      ballY = canvas.height / 2;
-      leftY = rightY = canvas.height / 2 - paddleHeight / 2;
-      gameOverMsg.style.display = "none";
-      clearInterval(gameInterval);
-      gameInterval = setInterval(draw, 1000 / 60);
-    });
-  </script>
+        startButton.addEventListener("click", () => {
+            ballX = canvas.width / 2;
+            ballY = canvas.height / 2;
+            leftY = rightY = canvas.height / 2 - paddleHeight / 2;
+            gameOverMsg.style.display = "none";
+            clearInterval(gameInterval);
+            gameInterval = setInterval(draw, 1000 / 60);
+        });
+    </script>
 </body>
+
 </html>
